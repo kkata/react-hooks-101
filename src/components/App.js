@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import reducer from '../reducers'
 
+import Event from './Event'
+
 const App = () => {
   const [state, dispatch] = useReducer(reducer, [])
   const [title, setTitle] = useState('')
@@ -18,7 +20,6 @@ const App = () => {
     setTitle('')
     setBody('')
   }
-  console.log({state})
   return (
     <div className="container-fluid">
       <h4>イベント作成フォーム</h4>
@@ -42,10 +43,12 @@ const App = () => {
           <tr>
             <th>ID</th>
             <th>タイトル</th>
+            <th>ボディー</th>
             <th>&nbsp;</th>
           </tr>
         </thead>
         <tbody>
+          { state.map((event, index) => (<Event key={index} event={event} dispatch={dispatch}/>))}
         </tbody>
       </table>
     </div>
