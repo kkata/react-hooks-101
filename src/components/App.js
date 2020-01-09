@@ -1,7 +1,5 @@
 import React, { useEffect, useReducer} from 'react'
 
-import 'bootstrap/dist/css/bootstrap.min.css'
-
 import AppContext from '../contexts/AppContext'
 import reducer from '../reducers'
 
@@ -25,7 +23,7 @@ const App = () => {
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>
-      <div className="container-fluid">
+      <div>
         <EventForm />
         <Events />
         <OperationLogs />
