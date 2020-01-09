@@ -57,17 +57,17 @@ const EventForm = () => {
     <>
       <h4>イベント作成フォーム</h4>
       <form>
-        <div className="form-group">
+        <div>
           <label htmlFor="formEventTitle">タイトル</label>
-          <input className="form-control" id="formEventTitle" value={title} onChange={e => setTitle(e.target.value)}></input>
+          <input id="formEventTitle" value={title} onChange={e => setTitle(e.target.value)}></input>
         </div>
-        <div className="form-group">
+        <div>
           <label htmlFor="formEventBody">ボディー</label>
-          <textarea className="form-control" id="formEventBody" value={body} onChange={e => setBody(e.target.value)}></textarea>
+          <textarea id="formEventBody" value={body} onChange={e => setBody(e.target.value)}></textarea>
         </div>
-        <button className="btn btn-primary" onClick={addEvent} disabled={unCreatable}>イベントを作成する</button>
-        <button className="btn btn-danger" onClick={deleteAllEvents} disabled={!state.events.length}>全てのイベントを削除する</button>
-        <button className="btn btn-danger" onClick={deleteAllOperationLogs} disabled={state.operationLogs.length === 0}>全ての操作ログを削除する</button>
+        <button onClick={addEvent} disabled={unCreatable}>イベントを作成する</button>
+        <button onClick={deleteAllEvents} disabled={!state.events.length}>全てのイベントを削除する</button>
+        <button onClick={deleteAllOperationLogs} disabled={state.operationLogs.length === 0}>全ての操作ログを削除する</button>
       </form>
     </>
   )
