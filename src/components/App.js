@@ -7,6 +7,8 @@ import EventForm from './EventForm'
 import Events from './Events'
 import OperationLogs from './OperationLogs'
 
+import '../App.scss'
+
 const APP_KEY = 'appWithRedux'
 
 const App = () => {
@@ -23,11 +25,24 @@ const App = () => {
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>
-      <div>
-        <EventForm />
-        <Events />
-        <OperationLogs />
-      </div>
+      <section className="section">
+        <div className="container">
+          <h1 className="title">イベント作成フォーム</h1>
+          <EventForm />
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <h1 className="title">イベント一覧</h1>
+          <Events />
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <h1 className="title">操作ログ一覧</h1>
+          <OperationLogs />
+        </div>
+      </section>
     </AppContext.Provider>
   )
 }

@@ -54,22 +54,25 @@ const EventForm = () => {
   }
 
   return (
-    <>
-      <h4>イベント作成フォーム</h4>
-      <form>
-        <div>
-          <label htmlFor="formEventTitle">タイトル</label>
-          <input id="formEventTitle" value={title} onChange={e => setTitle(e.target.value)}></input>
+    <form>
+      <div className="field">
+        <label className="label" htmlFor="formEventTitle">タイトル</label>
+        <div className="control">
+          <input className="input" type="text" id="formEventTitle" value={title} onChange={e => setTitle(e.target.value)}></input>
         </div>
-        <div>
-          <label htmlFor="formEventBody">ボディー</label>
-          <textarea id="formEventBody" value={body} onChange={e => setBody(e.target.value)}></textarea>
+      </div>
+      <div className="field">
+        <label className="label" htmlFor="formEventBody">ボディー</label>
+        <div className="control">
+          <textarea className="textarea" id="formEventBody" value={body} onChange={e => setBody(e.target.value)}></textarea>
         </div>
-        <button onClick={addEvent} disabled={unCreatable}>イベントを作成する</button>
-        <button onClick={deleteAllEvents} disabled={!state.events.length}>全てのイベントを削除する</button>
-        <button onClick={deleteAllOperationLogs} disabled={state.operationLogs.length === 0}>全ての操作ログを削除する</button>
-      </form>
-    </>
+      </div>
+      <div className="buttons">
+        <button className="button is-primary" onClick={addEvent} disabled={unCreatable}>イベントを作成する</button>
+        <button className="button is-danger" onClick={deleteAllEvents} disabled={!state.events.length}>全てのイベントを削除する</button>
+        <button className="button is-danger" onClick={deleteAllOperationLogs} disabled={state.operationLogs.length === 0}>全ての操作ログを削除する</button>
+      </div>
+    </form>
   )
 }
 

@@ -6,10 +6,11 @@ import OperationLog from '../components/OperationLog'
 
 const OperationLogs = () => {
   const { state } = useContext(AppContext)
-  return (
-    <>
-      <h4>操作ログ一覧</h4>
-      <table>
+  if (!state.operationLogs.length) {
+    return <p className="has-text-grey">操作ログはありません</p>
+  } else {
+    return (
+      <table className="table is-hoverable is-fullwidth">
         <thead>
           <tr>
             <th>内容</th>
@@ -24,8 +25,8 @@ const OperationLogs = () => {
           }
         </tbody>
       </table>
-    </>
-  )
+    )
+  }
 }
 
 export default OperationLogs
