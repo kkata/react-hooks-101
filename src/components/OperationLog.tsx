@@ -1,10 +1,17 @@
 import React from 'react'
 
 import dayjs from 'dayjs';
+
+import { OperationLogState } from '../interfaces'
+
 import 'dayjs/locale/ja';
 dayjs.locale('ja');
 
-const OperationLog = ({ operationLog }) => {
+type OperationLogProps = {
+  operationLog: OperationLogState
+}
+
+const OperationLog = ({ operationLog }: OperationLogProps) => {
   return (
     <tr>
       <td>{operationLog.description}</td>
