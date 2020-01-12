@@ -1,13 +1,14 @@
- import React, { useContext } from 'react'
-
-import {
-  ADD_OPERATION_LOG,
-  DELETE_EVENT
-} from '../actions'
+import React, { useContext } from 'react'
+import { ADD_OPERATION_LOG,  DELETE_EVENT } from '../actions'
+import { EventState } from '../interfaces'
 import AppContext from '../contexts/AppContext'
 import { timeCurrentIso8601 } from '../utils'
 
-const Event = ({ event }) => {
+type EventProps = {
+  event: EventState
+}
+
+const Event = ({ event }: EventProps) => {
   const { dispatch } = useContext(AppContext)
   const id = event.id
   const handleClickDleteButton = () => {

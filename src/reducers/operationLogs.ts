@@ -2,8 +2,12 @@ import {
   ADD_OPERATION_LOG,
   DELETE_ALL_OPERATION_LOGS
 } from '../actions'
+import {
+  OperationLogState,
+  OperationLogsAction
+} from '../interfaces'
 
-const operationLogs = (state = [], action) => {
+const operationLogs = (state: OperationLogState[] = [], action: OperationLogsAction) => {
   switch (action.type) {
     case ADD_OPERATION_LOG:
       const operationLog = {

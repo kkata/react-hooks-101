@@ -1,3 +1,4 @@
+import { EventState, EventAction } from '../interfaces'
 import { CREATE_EVENT, DELETE_EVENT, DELETE_ALL_EVENTS } from '../actions'
 
 // action = {
@@ -30,7 +31,8 @@ import { CREATE_EVENT, DELETE_EVENT, DELETE_ALL_EVENTS } from '../actions'
 //     { id: 4, title: '2020東京オリンピックのお知らせ', body: '2020年に東京でオリンピックを開催します。つきましては、'}
 // ]
 
-const events = (state = [], action) => {
+
+const events = (state: EventState[] = [], action: EventAction) => {
   switch(action.type) {
     case CREATE_EVENT:
       const event = { title: action.title, body: action.body}
