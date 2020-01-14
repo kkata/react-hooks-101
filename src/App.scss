@@ -34,3 +34,14 @@
 @import '../node_modules/bulma/sass/elements/title.sass';
 @import '../node_modules/bulma/sass/elements/table.sass';
 @import '../node_modules/bulma/sass/layout/section.sass';
+
+// original
+.easy-edit-component-wrapper {
+  @extend .control;
+  @extend .field;
+  width: 100%;
+}
+.easy-edit-button-wrapper {
+  @extend .buttons;
+  @extend .is-right;
+}

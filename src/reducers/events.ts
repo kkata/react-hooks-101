@@ -1,5 +1,5 @@
 import { EventState, EventAction } from '../interfaces'
-import { CREATE_EVENT, DELETE_EVENT, DELETE_ALL_EVENTS } from '../actions'
+import { CREATE_EVENT, DELETE_EVENT, DELETE_ALL_EVENTS, EDIT_EVENT_TITLE, EDIT_EVENT_BODY} from '../actions'
 
 // action = {
 //     type: 'CREATE_EVENT',
@@ -39,6 +39,12 @@ const events = (state: EventState[] = [], action: EventAction) => {
       const length = state.length
       const id = length === 0 ? 1 : state[length - 1].id + 1
       return [...state, { id, ...event }]
+    case EDIT_EVENT_TITLE:
+      state.map(event => event.title = event.id === action.id ? action.title : event.title)
+      return state
+    case EDIT_EVENT_BODY:
+      state.map(event => event.body = event.id === action.id ? action.body : event.body)
+      return state
     case DELETE_EVENT:
       return state.filter(event => event.id !== action.id)
     case DELETE_ALL_EVENTS:

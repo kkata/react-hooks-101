@@ -12,8 +12,8 @@ export interface OperationLogState {
 export interface EventAction {
   type: string
   id?: number
-  body?: string
-  title?: string
+  body: string
+  title: string
 }
 export interface OperationLogsAction {
   type: string
